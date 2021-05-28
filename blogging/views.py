@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from .models import *
 from .serializers import *
 
+#endpoint describing home view
 @api_view(['GET'])
 def home_view(request):
     return Response({
@@ -10,6 +11,7 @@ def home_view(request):
         '/comments(GET,POST)':'All comments'
     })
 
+#API to create and list blogs
 @api_view(['GET','POST'])
 def blogs(request):
     if request.method == 'GET':
@@ -24,6 +26,7 @@ def blogs(request):
             return Response(serializer.data)
         return Response(serializer.errors)
 
+#api to create and list comments
 @api_view(['GET','POST'])
 def comments(request):
     if request.method == 'GET':

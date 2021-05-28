@@ -1,6 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 from .models import *
 
+#serializers to convert object data to JSON
 class BlogSerializer(ModelSerializer):
     class Meta:
         model = Blog
