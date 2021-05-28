@@ -3,6 +3,13 @@ from rest_framework.response import Response
 from .models import *
 from .serializers import *
 
+@api_view(['GET'])
+def home_view(request):
+    return Response({
+        '/blogs(GET,POST)':'All blogs',
+        '/comments(GET,POST)':'All comments'
+    })
+
 @api_view(['GET','POST'])
 def blogs(request):
     if request.method == 'GET':
